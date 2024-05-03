@@ -1,0 +1,31 @@
+﻿@page
+@model IEnumerable<PKS5.Modules.Lecturer>
+@{
+    ViewData["Title"] = "Lecturer";
+}
+
+@{
+    Layout = "~/Pages/Shared/_Layout_mess.cshtml";
+}
+
+<h2>Преподаватели</h2>
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Lastname)</th>
+        <th>@Html.DisplayNameFor(model => model.Firstname)</th>
+        <th>@Html.DisplayNameFor(model => model.Middlename)</th>
+        <th>@Html.DisplayNameFor(model => model.Subject)</th>
+        <th>@Html.DisplayNameFor(model => model.Department)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Lastname)</td>
+            <td>@Html.DisplayFor(modelItem => item.Firstname)</td>
+            <td>@Html.DisplayFor(modelItem => item.Middlename)</td>
+            <td>@Html.DisplayFor(modelItem => item.Subject)</td>
+            <td>@Html.DisplayFor(modelItem => item.Department)</td>
+        </tr>
+    }
+</table>
